@@ -3,11 +3,12 @@ Summary:	Python Powered Karaoke
 Summary(pl):	Karaoke w Pythonie
 Name:		pykaraoke
 Version:	0.5
-Release:	0.1
+Release:	1
 License:	LGPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/pykaraoke/%{name}-%{version}.zip
 # Source0-md5:	1e05f284c7c6a8fac4024cddf77a5b63
+Patch0:		%{name}-mid_charset.patch
 URL:		http://www.kibosh.org/pykaraoke/
 BuildRequires:	SDL-devel
 BuildRequires:	python-pygame-devel
@@ -37,6 +38,7 @@ PyKaraoke Features:
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 python setup.py build
