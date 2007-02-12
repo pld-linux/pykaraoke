@@ -1,5 +1,5 @@
 Summary:	Python Powered Karaoke
-Summary(pl):	Karaoke w Pythonie
+Summary(pl.UTF-8):   Karaoke w Pythonie
 Name:		pykaraoke
 Version:	0.5
 Release:	1
@@ -34,23 +34,23 @@ PyKaraoke Features:
  - Search inside ZIP files - Play MP3+G/MIDI files wrapped in ZIP files
  - Cross-platform - Runs on Windows, Linux, FreeBSD and GP2X
 
-%description -l pl
-PyKaraoke to wolnodostêpny odtwarzacz karaoke dla Linuksa, FreeBSD,
+%description -l pl.UTF-8
+PyKaraoke to wolnodostÄ™pny odtwarzacz karaoke dla Linuksa, FreeBSD,
 Windows i GP2X.
 
-Tego programu mo¿na u¿ywaæ do odtwarzania w³asnego zbioru piosenek
-karaoke w formacie CDG, MIDI i MPEG. Nie zawiera ¿adnych piosenek,
-trzeba je zdobyæ z innych ¼róde³.
+Tego programu moÅ¼na uÅ¼ywaÄ‡ do odtwarzania wÅ‚asnego zbioru piosenek
+karaoke w formacie CDG, MIDI i MPEG. Nie zawiera Å¼adnych piosenek,
+trzeba je zdobyÄ‡ z innych ÅºrÃ³deÅ‚.
 
-Mo¿liwo¶ci PyKaraoke:
- - odtwarzanie standardowych plików karaoke CDG (MP3+G, OGG+G)
- - odtwarzanie plików karaoke w formacie MIDI (.MID/.KAR)
- - odtwarzanie piosenek i filmów w formacie MPEG
+MoÅ¼liwoÅ›ci PyKaraoke:
+ - odtwarzanie standardowych plikÃ³w karaoke CDG (MP3+G, OGG+G)
+ - odtwarzanie plikÃ³w karaoke w formacie MIDI (.MID/.KAR)
+ - odtwarzanie piosenek i filmÃ³w w formacie MPEG
  - playlista - kolejkowanie piosenek
- - baza danych piosenek z wyszukiwaniem dostêpnym z g³ównego ekranu
- - szukanie wewn±trz plików ZIP, odtwarzanie plików MP3+G/MIDI z
-   plików ZIP
- - wieloplatformowo¶æ - dzia³a pod Windows, Linuksem, FreeBSD i GP2X
+ - baza danych piosenek z wyszukiwaniem dostÄ™pnym z gÅ‚Ã³wnego ekranu
+ - szukanie wewnÄ…trz plikÃ³w ZIP, odtwarzanie plikÃ³w MP3+G/MIDI z
+   plikÃ³w ZIP
+ - wieloplatformowoÅ›Ä‡ - dziaÅ‚a pod Windows, Linuksem, FreeBSD i GP2X
 
 %prep
 %setup -q
