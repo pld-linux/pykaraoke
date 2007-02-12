@@ -1,5 +1,5 @@
 Summary:	Python Powered Karaoke
-Summary(pl.UTF-8):   Karaoke w Pythonie
+Summary(pl.UTF-8):	Karaoke w Pythonie
 Name:		pykaraoke
 Version:	0.5
 Release:	1
