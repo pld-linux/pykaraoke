@@ -1,0 +1,40 @@
+--- pykaraoke-0.7.1/install/pykaraoke.desktop~	2009-08-27 16:34:48.000000000 +0200
++++ pykaraoke-0.7.1/install/pykaraoke.desktop	2009-08-27 16:34:48.000000000 +0200
+@@ -1,13 +1,14 @@
+ [Desktop Entry]
+ Type=Application
+-Encoding=UTF-8
+ Name=PyKaraoke
+ Name[lt]=PyKaraoke
+ GenericName=Karaoke player
++GenericName[pl]=Odtwarzacz karaoke
+ Comment=Universal karaoke songs and movies player
+ Comment[lt]=Universalus karaoke muzikos bei video grotuvas
+-Icon=/usr/share/pykaraoke/icons/pykaraoke.xpm
++Comment[pl]=Uniwersalny odtwarzacz filmów i piosenek karaoke
++Icon=pykaraoke
+ Exec=pykaraoke
+ Terminal=false
+-MimeType=audio/x-karaoke;audio/x-midi;audio/midi
+-Categories=Application;AudioVideo;Player;
++Categories=AudioVideo;Player;
++# vi: encoding=utf-8
+--- pykaraoke-0.7.1/install/pykaraoke_mini.desktop~	2009-08-27 16:36:54.000000000 +0200
++++ pykaraoke-0.7.1/install/pykaraoke_mini.desktop	2009-08-27 16:36:54.000000000 +0200
+@@ -1,11 +1,12 @@
+ [Desktop Entry]
+ Type=Application
+-Encoding=UTF-8
+ Name=PyKaraoke Mini
+ GenericName=Karaoke player
++GenericName[pl]=Odtwarzacz karaoke
+ Comment=Minimum-interface PyKaraoke
+-Icon=/usr/share/pykaraoke/icons/pykaraoke.xpm
++Comment[pl]=PyKaraoke z minimalnym interfejsem
++Icon=pykaraoke
+ Exec=pykaraoke_mini
+ Terminal=false
+-MimeType=audio/x-karaoke;audio/x-midi;audio/midi
+-Categories=Application;AudioVideo;Player;
++Categories=AudioVideo;Player;
++# vi: encoding=utf-8
