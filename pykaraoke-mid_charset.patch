@@ -1,14 +1,13 @@
-diff -dur -x '*~' pykaraoke-0.5.orig/pykdb.py pykaraoke-0.5/pykdb.py
---- pykaraoke-0.5.orig/pykdb.py	2006-07-11 20:59:15.000000000 +0200
-+++ pykaraoke-0.5/pykdb.py	2006-09-29 21:51:09.000000000 +0200
-@@ -166,7 +166,9 @@
-         if ext.lower() == ".cdg":
-             constructor = player = pycdg.cdgPlayer
-         elif (ext.lower() == ".kar") or (ext.lower() == ".mid"):
--            constructor = player = pykar.midPlayer
-+            def midPlayerFactory(song, errorNotifyCallback, doneCallback):
-+                return pykar.midPlayer(song, errorNotifyCallback, doneCallback, Charset = globalSongDB.Settings.DefaultCharset)
-+            constructor = player = midPlayerFactory
-         elif (ext.lower() == ".mpg") or (ext.lower() == ".mpeg"):
-             constructor = player = pympg.mpgPlayer
-         # TODO basic mp3/ogg player
+--- pykaraoke-0.7.1/pykdb.py~	2009-08-26 20:41:44.000000000 +0200
++++ pykaraoke-0.7.1/pykdb.py	2009-08-27 16:11:59.000000000 +0200
+@@ -340,7 +340,9 @@
+         if self.Type == self.T_CDG:
+             constructor = pycdg.cdgPlayer
+         elif self.Type == self.T_KAR:
+-            constructor = pykar.midPlayer
++	    def midPlayerFactory(song, errorNotifyCallback, doneCallback):
++		return pykar.midPlayer(song, errorNotifyCallback, doneCallback, Charset = globalSongDB.Settings.DefaultCharset)
++	    constructor = midPlayerFactory	
+         elif self.Type == self.T_MPG:
+             if self.MpgType == 'mpg' and settings.MpgNative and pympg.movie:
+                 # Mpg files can be played internally.
