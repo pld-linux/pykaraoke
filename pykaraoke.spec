@@ -1,18 +1,19 @@
 Summary:	Python Powered Karaoke
 Summary(pl.UTF-8):	Karaoke w Pythonie
 Name:		pykaraoke
-Version:	0.5
+Version:	0.7.1
 Release:	1
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/pykaraoke/%{name}-%{version}.zip
-# Source0-md5:	1e05f284c7c6a8fac4024cddf77a5b63
+# Source0-md5:	28c57afe676f324030a1706f706d7e93
 Patch0:		%{name}-mid_charset.patch
 URL:		http://www.kibosh.org/pykaraoke/
 BuildRequires:	SDL-devel
 BuildRequires:	python-pygame-devel
+BuildRequires:	python-wxPython
+BuildRequires:	unzip
 Requires:	python-pygame
-Requires:	python-wxPython
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,13 +58,16 @@ Możliwości PyKaraoke:
 %patch0 -p1
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
-find $RPM_BUILD_ROOT%{py_sitedir} -name "*.py" | xargs rm
+%{__python} setup.py install \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
+
+#find $RPM_BUILD_ROOT%{py_sitedir} -name "*.py" | xargs rm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -72,6 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.txt
 %attr(755,root,root) %{_bindir}/*
-%{py_sitedir}/*
+%{py_sitedir}/*.py[co]
 %{_desktopdir}/*.desktop
 %{_datadir}/%{name}
