@@ -8,6 +8,7 @@ Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/pykaraoke/%{name}-%{version}.zip
 # Source0-md5:	28c57afe676f324030a1706f706d7e93
 Patch0:		%{name}-mid_charset.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://www.kibosh.org/pykaraoke/
 BuildRequires:	SDL-devel
 BuildRequires:	python-pygame-devel
@@ -57,16 +58,20 @@ Możliwości PyKaraoke:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
+
+install icons/pykaraoke.xpm $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
@@ -81,6 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_desktopdir}/*.desktop
+%{_pixmapsdir}/%{name}.xpm
 %{py_sitedir}/*.py[co]
 %if "%{py_ver}" > "2.4"
 %{py_sitedir}/*.egg-info
