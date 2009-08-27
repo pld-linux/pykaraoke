@@ -12,6 +12,7 @@ URL:		http://www.kibosh.org/pykaraoke/
 BuildRequires:	SDL-devel
 BuildRequires:	python-pygame-devel
 BuildRequires:	python-wxPython
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	unzip
 Requires:	python-pygame
 %pyrequires_eq	python-modules
@@ -67,7 +68,9 @@ rm -rf $RPM_BUILD_ROOT
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
-#find $RPM_BUILD_ROOT%{py_sitedir} -name "*.py" | xargs rm
+%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
+%py_comp $RPM_BUILD_ROOT%{py_sitedir}
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -76,6 +79,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.txt
 %attr(755,root,root) %{_bindir}/*
-%{py_sitedir}/*.py[co]
-%{_desktopdir}/*.desktop
 %{_datadir}/%{name}
+%{_desktopdir}/*.desktop
+%{py_sitedir}/*.py[co]
+%if "%{py_ver}" > "2.4"
+%{py_sitedir}/*.egg-info
+%endif
