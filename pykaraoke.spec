@@ -13,6 +13,7 @@ URL:		http://www.kibosh.org/pykaraoke/
 BuildRequires:	SDL-devel
 BuildRequires:	python-pygame-devel
 BuildRequires:	python-wxPython
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	unzip
 Requires:	python-pygame
