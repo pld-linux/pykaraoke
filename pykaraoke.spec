@@ -11,6 +11,7 @@ Patch0:		%{name}-mid_charset.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://www.kibosh.org/pykaraoke/
 BuildRequires:	SDL-devel
+BuildRequires:	python-devel
 BuildRequires:	python-pygame-devel
 BuildRequires:	python-wxPython
 BuildRequires:	rpm-pythonprov
