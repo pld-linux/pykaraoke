@@ -1,12 +1,12 @@
 Summary:	Python Powered Karaoke
 Summary(pl.UTF-8):	Karaoke w Pythonie
 Name:		pykaraoke
-Version:	0.7.3
+Version:	0.7.4
 Release:	1
 License:	LGPL v2.1+
 Group:		Applications/Sound
 Source0:	http://downloads.sourceforge.net/pykaraoke/%{name}-%{version}.zip
-# Source0-md5:	e2da9f7e38901e6c8be17bbc2e5e953e
+# Source0-md5:	12434462ad8224ea3d6c9b6026e42503
 Patch0:		%{name}-mid_charset.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://www.kibosh.org/pykaraoke/
