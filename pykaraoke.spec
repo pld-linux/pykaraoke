@@ -7,8 +7,7 @@ License:	LGPL v2.1+
 Group:		Applications/Sound
 Source0:	http://downloads.sourceforge.net/pykaraoke/%{name}-%{version}.zip
 # Source0-md5:	0a18dc2c4b2b56ee81987fac81d3f011
-Patch0:		%{name}-mid_charset.patch
-Patch1:		%{name}-desktop.patch
+Patch0:		%{name}-desktop.patch
 URL:		http://www.kibosh.org/pykaraoke/
 BuildRequires:	SDL-devel
 BuildRequires:	python-devel
@@ -60,7 +59,6 @@ Możliwości PyKaraoke:
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__python} setup.py build
