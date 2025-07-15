@@ -58,7 +58,7 @@ Możliwości PyKaraoke:
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__python} setup.py build
